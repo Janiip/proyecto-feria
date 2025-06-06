@@ -10,7 +10,7 @@
     <div id="barra-nav-al">
         <nav>
             <ul id="menu-al">
-               <li><a href="#index.php">Inicio</a></li>
+               <li><a href="index.php">Inicio</a></li>
                <li><a href="#">Curso</a>
                 <ul id="desplegable-curso">
                     <li><a href="#">1ro</a></li>
@@ -34,7 +34,7 @@
                     <li><a href="#">H</a></li>
                 </ul>
             </li>
-               <li><a href="#listado.php">Volver</a></li>
+               <li><a href="listado.php">Volver</a></li>
             </ul>
         </nav>
     </div>

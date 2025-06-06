@@ -11,5 +11,8 @@
         <input type="text" name="rfid_uid" id="rfid_uid" autofocus>
         <input type="submit" value="Registrar">
     </form>
+    <div class="atras">
+        <button><a href="index.php">Volver</a></button>
+    </div>
 </body>
 </html>

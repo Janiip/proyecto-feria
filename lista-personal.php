@@ -10,14 +10,14 @@
     <div id="barra-nav-pers">
         <nav>
             <ul id="menu-pers">
-               <li><a href="#index.php">Inicio</a></li>
-               <li><a href="#">Cargo</a>
+               <li><a href="index.php">Inicio</a></li>
+               <li><a href="#   ">Cargo</a>
                 <ul id="desplegable-cargo">
                     <li><a href="#">Auxiliar</a></li>
                     <li><a href="#">Docente</a></li>
                 </ul>
             </li>
-               <li><a href="#listado.php">Volver</a></li>
+               <li><a href="listado.php">Volver</a></li>
             </ul>
         </nav>
     </div>
