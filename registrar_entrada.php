@@ -1,45 +1,50 @@
 <?php
 include "conexion.php";
 
-$uid = $_GET['uid'] ?? $_POST['uid'] ?? '';
+// Capturamos el UID por GET o POST
+$uid = $_POST['rfid_uid'] ?? $_GET['uid'] ?? '';
 
 if (!$uid) {
-    echo "No se recibió ningún UID.";
+    echo "<h2>No se recibió ningún UID</h2>";
     exit;
 }
 
+$tipo = "";
+$nombre = "";
+
 // Buscar en alumnos
-$query = "SELECT nombre, apellido FROM alumnos WHERE rfid_uid = ?";
-$stmt = $con->prepare($query);
+$stmt = $con->prepare("SELECT nombre, apellido FROM alumnos WHERE rfid_uid = ?");
 $stmt->bind_param("s", $uid);
 $stmt->execute();
 $result = $stmt->get_result();
 
 if ($row = $result->fetch_assoc()) {
-    $nombre = $row['nombre'] . ' ' . $row['apellido'];
-    $tipo = 'alumno';
+    $nombre = $row['nombre'] . " " . $row['apellido'];
+    $tipo = "alumno";
 } else {
-    // Buscar en personal
-    $query = "SELECT nombre, apellido FROM personal WHERE rfid_uid = ?";
-    $stmt = $con->prepare($query);
+    // Buscar en personal si no es alumno
+    $stmt = $con->prepare("SELECT nombre, apellido FROM personal WHERE rfid_uid = ?");
     $stmt->bind_param("s", $uid);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($row = $result->fetch_assoc()) {
-        $nombre = $row['nombre'] . ' ' . $row['apellido'];
-        $tipo = 'personal';
-    } else {
-        echo "UID no registrado.";
-        exit;
+        $nombre = $row['nombre'] . " " . $row['apellido'];
+        $tipo = "personal";
     }
 }
 
-// Registrar la asistencia
-$query = "INSERT INTO asistencia_registro (rfid_uid, nombre, tipo) VALUES (?, ?, ?)";
-$stmt = $con->prepare($query);
-$stmt->bind_param("sss", $uid, $nombre, $tipo);
-$stmt->execute();
+if ($nombre && $tipo) {
+    // Registrar asistencia
+    $insert = $con->prepare("INSERT INTO asistencia_registro (rfid_uid, nombre, tipo) VALUES (?, ?, ?)");
+    $insert->bind_param("sss", $uid, $nombre, $tipo);
+    $insert->execute();
 
-echo "Asistencia registrada para $tipo: $nombre";
+    echo "<h2 style='color: green;'>✅ $tipo $nombre registrado con éxito</h2>";
+} else {
+    echo "<h2 style='color: red;'>❌ UID no registrado en el sistema</h2>";
+}
+
+echo "<meta http-equiv='refresh' content='1;URL=escanear_asistencia.php'>";
+
 ?>
