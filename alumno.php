@@ -28,15 +28,19 @@ $query = "INSERT INTO alumnos (nombre, apellido, dni, ano, division, fecha, rfid
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumno</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div id="formulario">
         <div id="titulo">
             <h1>Formulario</h1>
         </div>
+        <div id="alumno-h">
+        <h2>Alumnos</h2>
+        </div>
+        <br>
         <div id="alumnos">
-            <h2>Alumnos</h2>
+            
            <form id="formulario-al" method="POST" action="alumno.php">
              <label>
                 <span>Nombre/s: </span>
@@ -68,14 +72,16 @@ $query = "INSERT INTO alumnos (nombre, apellido, dni, ano, division, fecha, rfid
 
             </label>
 
-                <div class="btn-enviar">
-                <button type="submit" name="submit">Enviar</button>
-                </div>
+         
            </form>
         </div>
-    </div>
+        <div class="btn-enviar">
+             <button type="submit" name="submit">cargar alumno</button>
+        </div>
     <div class="atras">
         <button><a href="index.php">Volver</a></button>
     </div>
+    </div>
+    
 </body>
 </html>
