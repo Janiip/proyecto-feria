@@ -1,0 +1,222 @@
+body{
+    background-color: #ececec;
+    color: #6e6e6e;
+}
+nav{
+    max-width: 900px;
+    margin: auto;
+    background-color: rgba(245, 245, 245, .5);
+    font-size: 20px;
+    margin-top: -15px;
+}
+/*BARRA NAVEGACIÓN DE PERSONAL*/
+#menu-pers{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+#menu-pers li a{
+    display: block;
+    padding: 15px 20px;
+    color: #6e6e6e; 
+}
+#menu-pers > li:hover{
+    color:black ;
+    background-color: #ececec;
+    transition: 0.3s;
+}
+#desplegable-cargo{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(236, 236, 236, .5 );   
+}
+#menu-pers li:hover #desplegable-cargo{
+    display: block;
+    transition: 0.3s;
+}
+#menu-pers li a:hover{
+    color: black;
+    transition: 0.3s;
+}
+#desplegable-cargo li:hover{
+    background-color:rgba(224, 223, 223, .5);
+    color: #ececec;
+    transition: 0.3s;
+}
+#desplegable-cargo li a{
+    display: block;
+    color: #6e6e6e;
+    padding: 15px 15px 15px 20px;
+
+}
+#desplegable-cargo li a:hover{
+    color: black;
+    transition: 0.3s;
+}
+a{
+    text-decoration: none;
+}
+/*BARRA NAVEGACIÓN DE ALUMNO*/
+#menu-al{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+#menu-al li a{
+    display: block;
+    padding: 15px 20px;
+    color: #6e6e6e; 
+}
+#menu-al > li:hover{
+    color:black ;
+    background-color: #ececec;
+    transition: 0.3s;
+}
+#desplegable-curso{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(236, 236, 236, .5 );   
+}
+#desplegable-division{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(236, 236, 236, .5 );   
+}
+#menu-al li:hover #desplegable-curso{
+    display: block;
+    transition: 0.3s;
+}
+#menu-al li:hover #desplegable-division{
+    display: block;
+    transition: 0.3s;
+}
+#menu-al li a:hover{
+    color: black;
+    transition: 0.3s;
+}
+#desplegable-curso li:hover{
+    background-color:rgba(224, 223, 223, .5);
+    color: #ececec;
+    transition: 0.3s;
+}
+#desplegable-division li:hover{
+    background-color:rgba(224, 223, 223, .5);
+    color: #ececec;
+    transition: 0.3s;
+}
+#desplegable-curso li a{
+    display: block;
+    color: #6e6e6e;
+    padding: 15px 15px 15px 20px;
+}
+#desplegable-division li a{
+    display: block;
+    color: #6e6e6e;
+    padding: 15px 15px 15px 20px;
+}
+#desplegable-curso li a:hover{
+    color: black;
+    transition: 0.3s;
+}
+#desplegable-division li a:hover{
+    color: black;
+    transition: 0.3s;
+}
+/*index*/
+#boton-seleccion{
+    background-color: rgba(255, 255, 255, .5);
+    padding: 15px;
+    margin-top: 6%;
+
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+h2{
+    display: flex;
+    justify-content: center;
+}
+#ver-lista{
+    display: flex;
+    justify-content: center;
+}
+#ver-lista a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:50%;
+}
+#alumno-b{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+#alumno-b a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:50%;
+}
+#personal-b{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#personal-b a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:50%;
+}
+#entrada-b{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#entrada-b a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:50%;
+}
+#ver-lista:hover a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
+#alumno-b:hover a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
+#personal-b:hover a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
+#entrada-b:hover a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
