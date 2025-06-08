@@ -79,7 +79,7 @@ $query = "INSERT INTO alumnos (nombre, apellido, dni, ano, division, fecha, rfid
              <button type="submit" name="submit">cargar alumno</button>
         </div>
     <div class="atras">
-        <button><a href="index.php">Volver</a></button>
+        <a href="index.php">Volver</a>
     </div>
     </div>
     

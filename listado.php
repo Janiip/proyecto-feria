@@ -4,19 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vista de lista</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="seleccion-lista">
     <h1>Bienvenido</h1>
     <br>
     <h2>Seleccione la lista que desea ver</h2>
-        <div>
-            <button><a href="lista-alumno.php">Alumnado</a></button>
+
+    <br>
+        <div id="alumno-lista">
+            <a href="lista-alumno.php">Alumnado</a>
         </div>
-        <div>
-            <button><a href="lista-personal.php">Personal</a></button>
+        <div id="personal-lista">
+            <a href="lista-personal.php">Personal</a>
         </div>
-            <div class="atras">
-        <button><a href="index.php">Volver</a></button>
+        <div class="atras-lista">
+            <a href="index.php">Volver</a>
+        </div>
     </div>
 </body>
 </html>
