@@ -16,23 +16,20 @@
         </nav>
     </div>
     <div id="buscador-personal">
-            <form method="POST" action="lista-personal.php">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" value="<?php echo isset($_GET['nombre']) ? htmlspecialchars($_GET['nombre']) : ''; ?>">
+        <form method="POST" action="lista-personal.php">
+            <label for="nombre-apellido">Nombre y Apellido:</label>
+            <input type="text" id="nombre-apellido" name="nombre-apellido" placeholder="Nombre y Apellido" value="<?php echo isset($_POST['nombre-apellido']) ? htmlspecialchars($_POST['nombre-apellido']) : ''; ?>">
 
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" placeholder="Apellido" value="<?php echo isset($_GET['apellido']) ? htmlspecialchars($_GET['apellido']) : ''; ?>">
+            <label for="cargo">Cargo:</label>
+            <select id="cargo" name="cargo">
+                <option value="">Seleccione cargo</option>
+                <option value="Auxiliar" <?php if(isset($_POST['cargo']) && $_POST['cargo']=="Auxiliar") echo "selected"; ?>>Auxiliar</option>
+                <option value="Docente" <?php if(isset($_POST['cargo']) && $_POST['cargo']=="Docente") echo "selected"; ?>>Docente</option>
+            </select>
 
-                <label for="cargo">Cargo:</label>
-                <select id="cargo" name="cargo">
-                    <option value="">Todos</option>
-                    <option value="Auxiliar" <?php if(isset($_GET['cargo']) && $_GET['cargo']=="Auxiliar") echo "selected"; ?>>Auxiliar</option>
-                    <option value="Docente" <?php if(isset($_GET['cargo']) && $_GET['cargo']=="Docente") echo "selected"; ?>>Docente</option>
-                </select>
-
-                <button type="submit">Buscar</button>
-            </form>
-        </div>
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
      <!-- <div class="atras">
         <button><a href="listado.php">Volver</a></button>
     </div> -->
@@ -40,9 +37,28 @@
 </html>
 
 <?php
-
 include "conexion.php";
+
+// ARRAY PARA ALMACENAR EL NOMBRE, APELLIDO Y CARGO
+$condiciones = [];
+
+// VERIFICA SI LOS PARAMETROS PASADOS POR POST ESTAN VACIOS
+if (!empty($_POST['nombre-apellido'])) {
+    $nombre_apellido = mysqli_real_escape_string($con, $_POST['nombre-apellido']);
+    $condiciones[] = "(nombre LIKE '%$nombre_apellido%' OR apellido LIKE '%$nombre_apellido%')";
+}
+
+if (!empty($_POST['cargo'])) {
+    $cargo = mysqli_real_escape_string($con, $_POST['cargo']);
+    $condiciones[] = "cargo = '$cargo'";
+}
+
+//CONSULTAS
 $query = "SELECT * FROM `personal`";
+if (count($condiciones) > 0) {
+    $query .= " WHERE " . implode(" AND ", $condiciones);
+}
+
 $res = mysqli_query($con, $query);
 
 echo '<h2>Listado de Personal</h2>';
@@ -67,4 +83,3 @@ while ($row = mysqli_fetch_array($res)) {
 }
 echo '</table>';
 ?>
-
