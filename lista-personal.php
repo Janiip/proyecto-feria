@@ -11,17 +11,28 @@
         <nav>
             <ul id="menu-pers">
                <li><a href="index.php">Inicio</a></li>
-               <li><a href="#   ">Cargo</a>
-                <ul id="desplegable-cargo">
-                    <li><a href="#">Auxiliar</a></li>
-                    <li><a href="#">Docente</a></li>
-                </ul>
-            </li>
                <li><a href="listado.php">Volver</a></li>
             </ul>
         </nav>
     </div>
+    <div id="buscador-personal">
+            <form method="POST" action="lista-personal.php">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" value="<?php echo isset($_GET['nombre']) ? htmlspecialchars($_GET['nombre']) : ''; ?>">
 
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido" value="<?php echo isset($_GET['apellido']) ? htmlspecialchars($_GET['apellido']) : ''; ?>">
+
+                <label for="cargo">Cargo:</label>
+                <select id="cargo" name="cargo">
+                    <option value="">Todos</option>
+                    <option value="Auxiliar" <?php if(isset($_GET['cargo']) && $_GET['cargo']=="Auxiliar") echo "selected"; ?>>Auxiliar</option>
+                    <option value="Docente" <?php if(isset($_GET['cargo']) && $_GET['cargo']=="Docente") echo "selected"; ?>>Docente</option>
+                </select>
+
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
      <!-- <div class="atras">
         <button><a href="listado.php">Volver</a></button>
     </div> -->
