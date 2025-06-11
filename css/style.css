@@ -74,20 +74,6 @@ a{
     background-color: #ececec;
     transition: 0.3s;
 }
-#desplegable-curso{
-    position: absolute;
-    display: none;
-    list-style: none;
-    width: 200px;
-    background-color: rgba(236, 236, 236, .5 );   
-}
-#desplegable-division{
-    position: absolute;
-    display: none;
-    list-style: none;
-    width: 200px;
-    background-color: rgba(236, 236, 236, .5 );   
-}
 #menu-al li:hover #desplegable-curso{
     display: block;
     transition: 0.3s;
@@ -97,34 +83,6 @@ a{
     transition: 0.3s;
 }
 #menu-al li a:hover{
-    color: black;
-    transition: 0.3s;
-}
-#desplegable-curso li:hover{
-    background-color:rgba(224, 223, 223, .5);
-    color: #ececec;
-    transition: 0.3s;
-}
-#desplegable-division li:hover{
-    background-color:rgba(224, 223, 223, .5);
-    color: #ececec;
-    transition: 0.3s;
-}
-#desplegable-curso li a{
-    display: block;
-    color: #6e6e6e;
-    padding: 15px 15px 15px 20px;
-}
-#desplegable-division li a{
-    display: block;
-    color: #6e6e6e;
-    padding: 15px 15px 15px 20px;
-}
-#desplegable-curso li a:hover{
-    color: black;
-    transition: 0.3s;
-}
-#desplegable-division li a:hover{
     color: black;
     transition: 0.3s;
 }
@@ -140,7 +98,7 @@ h1{
     justify-content: center;
 }
 h2{
-    display: flex;
+    display: flex;  
     justify-content: center;
 }
 #ver-lista{
