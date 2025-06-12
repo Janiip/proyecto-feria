@@ -74,11 +74,11 @@ a{
     background-color: #ececec;
     transition: 0.3s;
 }
-#menu-al li:hover #desplegable-curso{
+#menu-al li:hover{
     display: block;
     transition: 0.3s;
 }
-#menu-al li:hover #desplegable-division{
+#menu-al li:hover{
     display: block;
     transition: 0.3s;
 }

@@ -74,7 +74,6 @@ if (!empty($nombre) || !empty($curso) || !empty($division)){
             $query .= " AND division = '" . mysqli_real_escape_string($con, $division) . "'";
         }
         // echo $query;
-        
         $res = mysqli_query($con, $query);
         echo '<h2>Listado de Alumnos</h2>';
         echo '<table border="1">';

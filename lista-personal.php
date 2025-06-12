@@ -11,6 +11,13 @@
         <nav>
             <ul id="menu-pers">
                <li><a href="index.php">Inicio</a></li>
+               <li>
+                <a href="#">Cargo</a>
+                <ul id="desplegable-cargo">
+                    <li><a href="lista-personal.php?cargo_nav=Auxiliar">Auxiliar</a></li>
+                    <li><a href="lista-personal.php?cargo_nav=Docente">Docente</a></li>
+                </ul>
+               </li>
                <li><a href="listado.php">Volver</a></li>
             </ul>
         </nav>
@@ -38,11 +45,10 @@
 
 <?php
 include "conexion.php";
-
 // ARRAY PARA ALMACENAR EL NOMBRE, APELLIDO Y CARGO
 $condiciones = [];
 
-// VERIFICA SI LOS PARAMETROS PASADOS POR POST ESTAN VACIOS
+// VERIFICA SI LOS PARAMETROS PASADOS POR POST NO ESTÁN VACIOS
 if (!empty($_POST['nombre-apellido'])) {
     $nombre_apellido = mysqli_real_escape_string($con, $_POST['nombre-apellido']);
     $condiciones[] = "(nombre LIKE '%$nombre_apellido%' OR apellido LIKE '%$nombre_apellido%')";
@@ -53,33 +59,58 @@ if (!empty($_POST['cargo'])) {
     $condiciones[] = "cargo = '$cargo'";
 }
 
-//CONSULTAS
-$query = "SELECT * FROM `personal`";
-if (count($condiciones) > 0) {
-    $query .= " WHERE " . implode(" AND ", $condiciones);
+if (!empty($condiciones)) {
+    $query = "SELECT * FROM personal WHERE " . implode(" AND ", $condiciones);
+    $res = mysqli_query($con, $query);
+
+    echo '<h2>Resultados del buscador</h2>';
+    echo '<table border="1">';
+    echo '<tr><th>Cargo</th><th>Nombre</th><th>Apellido</th><th>DNI</th><th>Fecha</th><th>UID RFID</th><th>Acción</th></tr>';
+
+    while ($row = mysqli_fetch_array($res)) {
+        echo "<tr>
+                <form method='POST' action='asignar_uid_personal.php'>
+                    <td>{$row["cargo"]}</td>
+                    <td>{$row["nombre"]}</td>
+                    <td>{$row["apellido"]}</td>
+                    <td>{$row["dni"]}</td>
+                    <td>{$row["fecha"]}</td>
+                    <td>
+                        <input type='text' name='uid' value='{$row["rfid_uid"]}' placeholder='Escaneá aquí' required>
+                        <input type='hidden' name='id_personal' value='{$row["dni"]}'>
+                    </td>
+                    <td><button type='submit'>Guardar</button></td>
+                </form>
+              </tr>";
+    }
+    echo '</table>';
 }
+//Barra nav desplegable con filtros
+if (isset($_GET['cargo_nav'])) {
+    $cargo_nav = mysqli_real_escape_string($con, $_GET['cargo_nav']);
+    $query_nav = "SELECT * FROM personal WHERE cargo = '$cargo_nav'";
+    $res_nav = mysqli_query($con, $query_nav);
 
-$res = mysqli_query($con, $query);
+    echo "<h2>Listado de Personal - Cargo: $cargo_nav</h2>";
+    echo '<table border="1">';
+    echo '<tr><th>Cargo</th><th>Nombre</th><th>Apellido</th><th>DNI</th><th>Fecha</th><th>UID RFID</th><th>Acción</th></tr>';
 
-echo '<h2>Listado de Personal</h2>';
-echo '<table border="1">';
-echo '<tr><th>Cargo</th><th>Nombre</th><th>Apellido</th><th>DNI</th><th>Fecha</th><th>UID RFID</th><th>Acción</th></tr>';
-
-while ($row = mysqli_fetch_array($res)) {
-    echo "<tr>
-            <form method='POST' action='asignar_uid_personal.php'>
-                <td>{$row["cargo"]}</td>
-                <td>{$row["nombre"]}</td>
-                <td>{$row["apellido"]}</td>
-                <td>{$row["dni"]}</td>
-                <td>{$row["fecha"]}</td>
-                <td>
-                    <input type='text' name='uid' value='{$row["rfid_uid"]}' placeholder='Escaneá aquí' required>
-                    <input type='hidden' name='id_personal' value='{$row["dni"]}'>
-                </td>
-                <td><button type='submit'>Guardar</button></td>
-            </form>
-          </tr>";
+    while ($row = mysqli_fetch_array($res_nav)) {
+        echo "<tr>
+                <form method='POST' action='asignar_uid_personal.php'>
+                    <td>{$row["cargo"]}</td>
+                    <td>{$row["nombre"]}</td>
+                    <td>{$row["apellido"]}</td>
+                    <td>{$row["dni"]}</td>
+                    <td>{$row["fecha"]}</td>
+                    <td>
+                        <input type='text' name='uid' value='{$row["rfid_uid"]}' placeholder='Escaneá aquí' required>
+                        <input type='hidden' name='id_personal' value='{$row["dni"]}'>
+                    </td>
+                    <td><button type='submit'>Guardar</button></td>
+                </form>
+              </tr>";
+    }
+    echo '</table>';
 }
-echo '</table>';
 ?>
