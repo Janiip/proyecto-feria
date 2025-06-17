@@ -404,3 +404,18 @@ table {
     gap: 10px;
     align-items: center;
 }
+/*buscador personal sin nombre*/
+#buscador-de-cursos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+#buscador-de-cursos{
+    width: 100%;
+}
+#buscador-de-cursos form{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
