@@ -51,7 +51,7 @@ $condiciones = [];
 // VERIFICA SI LOS PARAMETROS PASADOS POR POST NO ESTÁN VACIOS
 if (!empty($_POST['nombre-apellido'])) {
     $nombre_apellido = mysqli_real_escape_string($con, $_POST['nombre-apellido']);
-    $condiciones[] = "(nombre LIKE '%$nombre_apellido%' OR apellido LIKE '%$nombre_apellido%' OR CONCAT(nombre, ' ', apellido) LIKE '%$nombre_apellido%')";
+    $condiciones[] = "(nombre LIKE '%$nombre_apellido%' OR apellido LIKE '%$nombre_apellido%')";
 }
 
 if (!empty($_POST['cargo'])) {
@@ -68,22 +68,27 @@ if (!empty($condiciones)) {
     echo '<tr><th>Cargo</th><th>Nombre</th><th>Apellido</th><th>DNI</th><th>Fecha</th><th>UID RFID</th><th>Acción</th></tr>';
 
     while ($row = mysqli_fetch_array($res)) {
-        echo "<tr>
-                <form method='POST' action='asignar_uid_personal.php'>
-                    <td>{$row["cargo"]}</td>
-                    <td>{$row["nombre"]}</td>
-                    <td>{$row["apellido"]}</td>
-                    <td>{$row["dni"]}</td>
-                    <td>{$row["fecha"]}</td>
-                    <td>
-                        <input type='text' name='uid' value='{$row["rfid_uid"]}' placeholder='Escaneá aquí' required>
-                        <input type='hidden' name='id_personal' value='{$row["dni"]}'>
-                    </td>
-                    <td><button type='submit'>Guardar</button></td>
-                </form>
-              </tr>";
-    }
-    echo '</table>';
+    echo "<tr>
+            <form method='POST' action='asignar_uid_personal.php'>
+                <td>{$row["cargo"]}</td>
+                <td>{$row["nombre"]}</td>
+                <td>{$row["apellido"]}</td>
+                <td>{$row["dni"]}</td>
+                <td>{$row["fecha"]}</td>
+                <td>
+                    <input type='text' name='uid' value='{$row["rfid_uid"]}' placeholder='Escaneá aquí' required>
+                    <input type='hidden' name='id_personal' value='{$row["dni"]}'>
+                </td>
+                <td>
+                    <button type='submit'>Guardar</button>
+                    <a href='eliminar.php?tipo=personal&id={$row["dni"]}' onclick=\"return confirm('¿Seguro que deseas eliminar este miembro del personal?');\">
+                        <button type='button' style='background-color:red; color:white;'>Eliminar</button>
+                    </a>
+                </td>
+            </form>
+          </tr>";
+}
+
 }
 //Barra nav desplegable con filtros
 if (isset($_GET['cargo_nav'])) {
