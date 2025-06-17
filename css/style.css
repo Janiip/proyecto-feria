@@ -375,32 +375,3 @@ h2{
     background-color: #d6d6d6;
     color: #212020;
 }
-/*Buscado PERSONAL*/
-#buscador-personal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 0;
-}
-#buscador-personal form {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-/*TABLA PERSONAL*/
-table {
-    margin-left: auto;
-    margin-right: auto;
-}
-/*buscador ALUMNOS*/
-#buscador-alumnos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 0;
-}
-#buscador-alumnos form {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}

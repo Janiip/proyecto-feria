@@ -15,7 +15,6 @@
             </ul>
         </nav>
     </div>
-        <h2>Buscador de Alumnos: individual</h2> 
         <div id="buscador-alumnos">
         <form method="POST" action="lista-alumno.php">
             <label for="nombre">Alumno:</label>
@@ -48,10 +47,6 @@
 
             <button type="submit">Buscar</button>
         </form>
-    </div>
-    <h2>Buscador de cursos y divisiones</h2> 
-    <div id="buscador-de-cursos">
-        
     </div>
      <!-- <div class="atras">
         <button><a href="listado.php">Volver</a></button>
