@@ -51,7 +51,7 @@ $condiciones = [];
 // VERIFICA SI LOS PARAMETROS PASADOS POR POST NO ESTÁN VACIOS
 if (!empty($_POST['nombre-apellido'])) {
     $nombre_apellido = mysqli_real_escape_string($con, $_POST['nombre-apellido']);
-    $condiciones[] = "(nombre LIKE '%$nombre_apellido%' OR apellido LIKE '%$nombre_apellido%')";
+    $condiciones[] = "(nombre LIKE '%$nombre_apellido%' OR apellido LIKE '%$nombre_apellido%' OR CONCAT(nombre, ' ', apellido) LIKE '%$nombre_apellido%')";
 }
 
 if (!empty($_POST['cargo'])) {
