@@ -1,27 +1,5 @@
-<?php
-include "conexion.php";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recuperar los datos del formulario
-    $nombre = $_POST['nombre-al'] ?? '';
-    $apellido = $_POST['ape-al'] ?? '';
-    $dni = $_POST['dni-al'] ?? '';
-    $ano = $_POST['año-al'] ?? '';
-    $division = $_POST['division-al'] ?? '';
-    $fecha = $_POST['fecha-al'] ?? '';
-$rfid_uid = $_POST['rfid_uid'] ?? '';
-
-$query = "INSERT INTO alumnos (nombre, apellido, dni, ano, division, fecha, rfid_uid) 
-          VALUES ('$nombre', '$apellido', '$dni', '$ano', '$division', '$fecha', '$rfid_uid')";
 
 
-    if (mysqli_query($con, $query)) {
-        echo "Alumno registrado con éxito.";
-    } else {
-        echo "Error: " . mysqli_error($con);
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -71,13 +49,13 @@ $query = "INSERT INTO alumnos (nombre, apellido, dni, ano, division, fecha, rfid
                 <input type="text" name="rfid_uid" placeholder="Escaneá" autofocus>
 
             </label>
-
+            <div class="btn-enviar">
+                <button type="submit" name="submit">cargar alumno</button>
+            </div>
          
            </form>
         </div>
-        <div class="btn-enviar">
-             <button type="submit" name="submit">cargar alumno</button>
-        </div>
+
     <div class="atras">
         <a href="index.php">Volver</a>
     </div>
@@ -85,3 +63,26 @@ $query = "INSERT INTO alumnos (nombre, apellido, dni, ano, division, fecha, rfid
     
 </body>
 </html>
+<?php
+include "conexion.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recuperar los datos del formulario
+    $nombre = $_POST['nombre-al'] ?? '';
+    $apellido = $_POST['ape-al'] ?? '';
+    $dni = $_POST['dni-al'] ?? '';
+    $ano = $_POST['año-al'] ?? '';
+    $division = $_POST['division-al'] ?? '';
+    $fecha = $_POST['fecha-al'] ?? '';
+$rfid_uid = $_POST['rfid_uid'] ?? '';
+
+$query = "INSERT INTO alumnos (nombre, apellido, dni, ano, division, fecha, rfid_uid) 
+          VALUES ('$nombre', '$apellido', '$dni', '$ano', '$division', '$fecha', '$rfid_uid')";
+
+
+    if (mysqli_query($con, $query)) {
+        echo "Alumno registrado con éxito.";
+    } else {
+        echo "Error: " . mysqli_error($con);
+    }
+}?>
