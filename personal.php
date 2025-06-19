@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button type="submit" name="submit">Enviar</button>
                 </div>
                 <div class="atras">
-        <a href="index.php">Volver</a>
+        <a href="index.html">Volver</a>
     </div>
            </form>
         </div>

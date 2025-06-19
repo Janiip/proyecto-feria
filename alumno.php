@@ -57,7 +57,7 @@
         </div>
 
     <div class="atras">
-        <a href="index.php">Volver</a>
+        <a href="index.html">Volver</a>
     </div>
     </div>
     

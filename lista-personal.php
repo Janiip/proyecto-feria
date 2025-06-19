@@ -10,7 +10,7 @@
     <div id="barra-nav-pers">
         <nav>
             <ul id="menu-pers">
-               <li><a href="index.php">Inicio</a></li>
+               <li><a href="index.html">Inicio</a></li>
                <li>
                 <a href="#">Cargo</a>
                 <ul id="desplegable-cargo">
@@ -18,7 +18,7 @@
                     <li><a href="lista-personal.php?cargo_nav=Docente">Docente</a></li>
                 </ul>
                </li>
-               <li><a href="listado.php">Volver</a></li>
+               <li><a href="listado.html">Volver</a></li>
             </ul>
         </nav>
     </div>

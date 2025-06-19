@@ -90,7 +90,7 @@ a{
 #boton-seleccion{
     background-color: rgba(255, 255, 255, .5);
     padding: 15px;
-    margin-top: 6%;
+    margin-top: 2%;
 
 }
 h1{
@@ -106,6 +106,20 @@ h2{
     justify-content: center;
 }
 #ver-lista a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:50%;
+}
+#lista-autorizados{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+#lista-autorizados a{
     display: flex;
     justify-content: center;
     padding: 15px;
@@ -150,6 +164,20 @@ h2{
     margin-bottom: 5px;
 }
 #entrada-b a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:50%;
+}
+#salida-b{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+#salida-b a{
     display: flex;
     justify-content: center;
     padding: 15px;
