@@ -457,3 +457,54 @@ table {
     gap: 10px;
     align-items: center;
 }
+/*carga de autorizados*/
+#formulario-autorizados{
+  width: 100%;
+    margin-top: 6%;
+    padding: 20px;
+    background-color: #d6d6d6;
+}
+/*lista-autorizados*/
+#ver-lista-autorizados{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+#ver-lista-autorizados a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #ece9e9;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:10%;
+}
+#ver-lista-autorizados a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
+
+#cargar-autorizados{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+#cargar-autorizados a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #ece9e9;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:10%;
+}
+#cargar-autorizados a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
+#seleccion-lista{
+    background-color: #d6d6d6;
+    padding: 20px;
+}
