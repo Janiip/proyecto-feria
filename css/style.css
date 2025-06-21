@@ -508,3 +508,9 @@ table {
     background-color: #d6d6d6;
     padding: 20px;
 }
+/*retirada-entrada*/
+#escanear{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
