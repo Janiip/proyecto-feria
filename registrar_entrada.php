@@ -1,11 +1,11 @@
 <?php
 include "conexion.php";
-
 // Capturamos el UID por GET o POST
 $uid = $_POST['rfid_uid'] ?? $_GET['uid'] ?? '';
 
 if (!$uid) {
     echo "<h2>No se recibió ningún UID</h2>";
+    echo "<meta http-equiv='refresh' content='1;URL=escanear_asistencia.html'>";
     exit;
 }
 
@@ -45,6 +45,6 @@ if ($nombre && $tipo) {
     echo "<h2 style='color: red;'>❌ UID no registrado en el sistema</h2>";
 }
 
-echo "<meta http-equiv='refresh' content='1;URL=escanear_asistencia.php'>";
+echo "<meta http-equiv='refresh' content='1;URL=escanear_asistencia.html'>";
 
 ?>
