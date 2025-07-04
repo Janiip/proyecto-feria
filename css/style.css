@@ -514,3 +514,30 @@ table {
     justify-content: center;
     margin-top: 5px;
 }
+/*asistencia diaria*/
+#buscador-asistencia{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+#buscador-asistencia input, #tipo-asistencia{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+#boton-buscar-asistencia button{
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#boton-buscar-asistencia{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+} 
