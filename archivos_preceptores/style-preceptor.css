@@ -1,0 +1,543 @@
+body{
+    background-color: #ececec;
+    color: #6e6e6e;
+}
+nav{
+    max-width: 900px;
+    margin: auto;
+    background-color: rgba(245, 245, 245, .5);
+    font-size: 20px;
+    margin-top: -15px;
+}
+/*BARRA NAVEGACIÓN DE PERSONAL*/
+#menu-pers{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+#menu-pers li a{
+    display: block;
+    padding: 15px 20px;
+    color: #6e6e6e; 
+}
+#menu-pers > li:hover{
+    color:black ;
+    background-color: #ececec;
+    transition: 0.3s;
+}
+#desplegable-cargo{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(236, 236, 236, .5 );   
+}
+#menu-pers li:hover #desplegable-cargo{
+    display: block;
+    transition: 0.3s;
+}
+#menu-pers li a:hover{
+    color: black;
+    transition: 0.3s;
+}
+#desplegable-cargo li:hover{
+    background-color:rgba(224, 223, 223, .5);
+    color: #ececec;
+    transition: 0.3s;
+}
+#desplegable-cargo li a{
+    display: block;
+    color: #6e6e6e;
+    padding: 15px 15px 15px 20px;
+
+}
+#desplegable-cargo li a:hover{
+    color: black;
+    transition: 0.3s;
+}
+a{
+    text-decoration: none;
+}
+/*BARRA NAVEGACIÓN DE ALUMNO*/
+#menu-al{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+#menu-al li a{
+    display: block;
+    padding: 15px 20px;
+    color: #6e6e6e; 
+}
+#menu-al > li:hover{
+    color:black ;
+    background-color: #ececec;
+    transition: 0.3s;
+}
+#menu-al li:hover{
+    display: block;
+    transition: 0.3s;
+}
+#menu-al li:hover{
+    display: block;
+    transition: 0.3s;
+}
+#menu-al li a:hover{
+    color: black;
+    transition: 0.3s;
+}
+/*index*/
+#boton-seleccion{
+    background-color: rgba(255, 255, 255, .5);
+    padding: 15px;
+    margin-top: 2%;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+h2{
+    display: flex;  
+    justify-content: center;
+}
+#ver-lista{
+    display: flex;
+    justify-content: center;
+}
+#ver-lista a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:50%;
+}
+#lista-autorizados{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+#lista-autorizados a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:50%;
+}
+#alumno-b{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+#alumno-b a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:50%;
+}
+#personal-b{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#personal-b a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:50%;
+}
+#entrada-b{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#entrada-b a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:50%;
+}
+#salida-b{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+#salida-b a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:50%;
+}
+#ver-lista:hover a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
+#lista-autorizados:hover a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
+#alumno-b:hover a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
+#personal-b:hover a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
+#entrada-b:hover a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
+#salida-b:hover a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
+
+/*CARGAR ALUMNOS*/
+
+.btn-enviar {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.btn-enviar button {
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    padding: 10px 20px;
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-enviar button:hover {
+    background-color: #c5c5c5;
+    color: black;
+}
+
+
+#formulario{
+    margin-top: 6%;
+    padding: 20px;
+    background-color: #d6d6d6;
+}
+
+#formulario-al{
+   
+    background-color: #c5c5c5;
+}
+#titulo{
+    background-color: #ffffff;
+    border-radius: 20vh;
+}
+#alumnos{
+    background-color: #d5d0d0;
+    width: 100%;
+}
+.atras {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    text-decoration: none;
+    color: #6e6e6e;
+}
+
+.atras a {
+   display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:200px;
+    transition: 0.3s;
+}
+
+.atras a:hover {
+    background-color: #c5c5c5;
+    color: black;
+}
+#alumno-h{
+   display: flex;
+    justify-content: center;
+  
+    text-decoration: none;
+    color: #bbb5b5;
+}
+#alumno-h h2 {
+    background-color: #ffffff;
+    color: #8b8888;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    width: 300px;
+}
+/*seleccion de lista cargada*/
+
+#alumno-lista {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    text-decoration: none;
+    color: #9f9d9d;
+}
+
+#alumno-lista a {
+    background-color: #d6d6d6;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#alumno-lista a:hover {
+    background-color: #c5c5c5;
+    color: black;
+}
+
+#personal-lista  {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    text-decoration: none;
+    color: #212020;
+}
+
+#personal-lista a {
+    background-color: #d6d6d6;
+    color: #212020;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#personal-lista a:hover {
+    background-color: #c5c5c5;
+    color: black;
+}
+.seleccion-lista{
+    margin-top: 6%;
+    padding: 10px;
+    background-color: #d5d0d0;
+}
+.atras-lista  {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    text-decoration: none;
+    color: #212020;
+}
+
+.atras-lista a {
+    background-color: #d6d6d6;
+    color: #212020;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.atras-lista a:hover {
+    background-color: #c5c5c5;
+    color: black;
+}
+/*registro de asistencia*/
+#formulario-escan{
+    margin-top: 6%;
+    padding: 20px;
+    background-color: #d6d6d6;
+}
+#rfid_uid{
+    display: flex;
+    justify-content: center;
+}
+#rfid_uid input{
+    display: flex;
+    justify-content: center;
+}
+#registrar  {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    text-decoration: none;
+    color: #212020;
+}
+
+#registrar input {
+    background-color: #d6d6d6;
+    color: #212020;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#registrar input:hover {
+    background-color: #d6d6d6;
+    color: #212020;
+}
+
+/*Buscado PERSONAL*/
+#buscador-personal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+#buscador-personal form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+/*TABLA PERSONAL*/
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+/*buscador ALUMNOS*/
+#buscador-alumnos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+#buscador-alumnos form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+/*buscador personal sin nombre*/
+#buscador-de-cursos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+#buscador-de-cursos{
+    width: 100%;
+}
+#buscador-de-cursos form{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+/*carga de autorizados*/
+#formulario-autorizados{
+  width: 100%;
+    margin-top: 6%;
+    padding: 20px;
+    background-color: #d6d6d6;
+}
+/*lista-autorizados*/
+#ver-lista-autorizados{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+#ver-lista-autorizados a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #ece9e9;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:10%;
+}
+#ver-lista-autorizados a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
+
+#cargar-autorizados{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+#cargar-autorizados a{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #ece9e9;
+    color: #6e6e6e;
+    border-radius: 10dvh;
+    width:10%;
+}
+#cargar-autorizados a:hover{
+    background-color: #c5c5c5;
+    color: black;
+    transition: 0.3s;
+}
+#seleccion-lista{
+    background-color: #d6d6d6;
+    padding: 20px;
+}
+/*retirada-entrada*/
+#escanear{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+/*asistencia diaria*/
+#buscador-asistencia{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+#buscador-asistencia input, #tipo-asistencia{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+#boton-buscar-asistencia button{
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #d6d6d6;
+    color: #6e6e6e;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#boton-buscar-asistencia{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+} 
