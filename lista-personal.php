@@ -10,7 +10,7 @@
     <div id="barra-nav-pers">
         <nav>
             <ul id="menu-pers">
-               <li><a href="index.html">Inicio</a></li>
+               <li><a href="inicio-admin.html">Inicio</a></li>
                <li>
                 <a href="#">Cargo</a>
                 <ul id="desplegable-cargo">
