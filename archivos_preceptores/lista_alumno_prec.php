@@ -10,8 +10,8 @@
     <div id="barra-nav-al">
         <nav>
             <ul id="menu-al">
-               <li><a href="archivos_preceptores/inicio_preceptor.html">Inicio</a></li>
-               <li><a href="archivos_preceptores/listado_preceptor.html">Volver</a></li>
+               <li><a href="inicio_preceptor.html">Inicio</a></li>
+               <li><a href="listado_preceptor.html">Volver</a></li>
             </ul>
         </nav>
     </div>

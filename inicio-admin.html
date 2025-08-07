@@ -29,6 +29,30 @@
         <div id="salida-b">
             <a href="retirada-entrada.html">Salida</a>
         </div>
+        <hr>
+        <h2>Asistente IA</h2>
+        <div id="asistente-ia" style="margin-top:20px;">
+            <input type="text" id="mensaje" placeholder="Escribe tu pregunta..." style="width:70%;">
+            <button onclick="enviarMensaje()">Enviar</button>
+            <div id="respuesta" style="margin-top:10px; background:#f3f3f3; padding:10px; border-radius:5px;"></div>
+        </div>
+        <script>
+        function enviarMensaje() {
+            var mensaje = document.getElementById('mensaje').value;
+            fetch('chatbot.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: 'mensaje=' + encodeURIComponent(mensaje)
+            })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('respuesta').innerText = data.respuesta;
+            })
+            .catch(() => {
+                document.getElementById('respuesta').innerText = "Error al conectar con el asistente.";
+            });
+        }
+        </script>
     </div>
 </body>
 </html>

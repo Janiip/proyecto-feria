@@ -11,7 +11,7 @@
     <div id="barra-nav-al">
         <nav>
             <ul id="menu-al">
-               <li><a href="index.html">Inicio</a></li>
+               <li><a href="inicio-admin.html">Inicio</a></li>
                <li><a href="lista-autorizados.html">Volver</a></li>
             </ul>
         </nav>

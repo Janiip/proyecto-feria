@@ -57,7 +57,7 @@
         </div>
 
     <div class="atras">
-        <a href="index.html">Volver</a>
+        <a href="inicio-admin.html">Volver</a>
     </div>
     </div>
     
