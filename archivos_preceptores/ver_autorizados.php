@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lista de autorizados</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style-preceptor.css">
 </head>
 <body>
     <div id="barra-nav-al">
         <nav>
             <ul id="menu-al">
-               <li><a href="archivos_preceptores/inicio_preceptor.html">Inicio</a></li>
-               <li><a href="archivos_preceptores/autorizados_preceptor.html">Volver</a></li>
+               <li><a href="inicio_preceptor.html">Inicio</a></li>
+               <li><a href="autorizados_preceptor.html">Volver</a></li>
             </ul>
         </nav>
     </div>

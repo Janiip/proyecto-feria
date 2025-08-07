@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de personal</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"href="style-preceptor.css">
 </head>
 <body>
     <div id="barra-nav-pers">
@@ -18,7 +18,7 @@
                     <li><a href="lista-personal.php?cargo_nav=Docente">Docente</a></li>
                 </ul>
                </li>
-               <li><a href="listado.html">Volver</a></li>
+               <li><a href="listado_preceptor.html">Volver</a></li>
             </ul>
         </nav>
     </div>
