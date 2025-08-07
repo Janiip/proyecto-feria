@@ -21,7 +21,7 @@ if (preg_match('/conteo de inasistencias de (.+)/i', $mensaje, $matches)) {
 }
 
 // Si no es una consulta especial, responde con IA (OpenAI)
-// $apiKey = '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';
+$apiKey = '';
 $data = [
     'model' => 'gpt-3.5-turbo',
     'messages' => [
