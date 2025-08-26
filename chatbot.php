@@ -18,7 +18,8 @@ if (preg_match('/conteo de inasistencias de (.+)/i', $mensaje, $matches)) {
         echo json_encode(['respuesta' => "No se encontró información para el alumno $alumno."]);
     }
     exit;
-}
+} 
+
 
 // Si no es una consulta especial, responde con IA (OpenAI)
 $apiKey = '';
