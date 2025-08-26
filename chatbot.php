@@ -21,6 +21,7 @@ if (preg_match('/conteo de inasistencias de (.+)/i', $mensaje, $matches)) {
 } 
 
 
+//hola
 // Si no es una consulta especial, responde con IA (OpenAI)
 $apiKey = '';
 $data = [
